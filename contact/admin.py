@@ -10,3 +10,9 @@ class ContacAdmini(admin.ModelAdmin):
   list_filter = ('create_date',) # insere um campo de filtro da data
   list_per_page = 10 # quantidade de valores exibidos por pagina
   list_max_show_all = 200 # maximo de valores a serem mostrados 'mostrar tudo'
+
+@admin.register(models.Catagory)
+class CategoryAdmini(admin.ModelAdmin):
+  list_display = 'name',
+  orderin = '-id',
+  
