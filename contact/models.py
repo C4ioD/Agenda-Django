@@ -4,6 +4,10 @@ from django.utils import timezone
 # Create your models here.
 
 class Catagory(models.Model):
+   class Meta: # Classe para configurar os nomes das tabelas singular/plural
+      verbose_name = 'Category'
+      verbose_name_plural = 'Categories'
+
    name = models.CharField(max_length=50)
 
    def __str__(self):
