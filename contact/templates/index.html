@@ -3,7 +3,7 @@
 
 {% block content %}
 
-{% if contatos %}
+{% if page_obj %}
 
 <div class="reponsive-table">
   <table class="contacts-table">
@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for contato in contatos %}
+      {% for contato in page_obj %}
 
         <tr class="table-row">
           <td class="table-cel">
