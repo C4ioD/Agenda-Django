@@ -16,15 +16,15 @@ class ContactForm(forms.ModelForm):
     )
   
   ## CRIANDO UM NOVO CAMPO QUE NAO EXISTE NO MODEL
-  qualquer = forms.CharField(
-        widget=forms.TextInput(
-          attrs={
-              'class':'classe-a classe-b',
-              'placeholder':'Escreva aqui',
-          }
-        ),
-        help_text='Texto de ajuda para o usuário'
-    )
+  # qualquer = forms.CharField(
+  #       widget=forms.TextInput(
+  #         attrs={
+  #             'class':'classe-a classe-b',
+  #             'placeholder':'Escreva aqui',
+  #         }
+  #       ),
+  #       help_text='Texto de ajuda para o usuário'
+  #   )
 
  
   def __init__(self, *args, **kwargs):
@@ -38,7 +38,14 @@ class ContactForm(forms.ModelForm):
 
   class Meta:
     model = models.Contact
-    fields = ('first_name', 'last_name','phone')
+    fields = (
+      'first_name', 
+      'last_name',
+      'phone',
+      'email',
+      'description',
+      'category',
+      )
   
     ## METODO DE MUDAR OS ATRIBUTOS CRIANDO UM NOVO WIDGET
     # widgets = { 
