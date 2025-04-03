@@ -14,10 +14,19 @@
     <p><b>Description:</b> {{ contact.description }}</p>
     <p><b>Category:</b> {{ contact.category.name }}</p>
 
-    <div class="contact-links">
-      <a class='btn btn-link' href="{% url "contact:update" contact.id %}">Update</a>
+    {% if contact.picture %}
+    
+    <p> 
+      <img src="{{ contact.picture.url }}" alt="{{ contact.first_name }} {{ contact.last_name }}">
+    </p>
 
-      <form action="{% url "contact:delete" contact.id %}" method="POST">
+    {% endif %}
+    
+
+    <div class="contact-links">
+      <a class='btn btn-link' href="{% url 'contact:update' contact.id %}">Update</a>
+
+      <form action="{% url 'contact:delete' contact.id %}" method="POST">
         {% csrf_token %}
         
         {% if confirmation == 'no' %}
