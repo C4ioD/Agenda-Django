@@ -54,7 +54,7 @@ def contact (request, contact_id):
   contact_name = f'{single_contato.first_name} {single_contato.last_name} - '
 
   context = {
-    'contato':single_contato,
+    'contact':single_contato,
     'site_title': contact_name,
     }
 
